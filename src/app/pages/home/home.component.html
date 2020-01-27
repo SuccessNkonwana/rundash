@@ -1,0 +1,53 @@
+
+<div>
+    <canvas id="myChart" width="400" height="400"></canvas>
+</div>
+<div class="col-xl-6 col-lg-4">
+    <div class="card shadow mb-4">
+        <!-- Card Header - Dropdown -->
+        <div class="card-header py-3 d-flex flex-row align--center justify-content-between">
+            <h6 class="m-0 font-weight-bold text-primary">Ethnicity per gender statistics of registered users</h6>
+            <div class="dropdown no-arrow">
+
+            </div>
+        </div>
+        <!-- Card Body -->
+        <div class="col-xl-10 col-lg-4">
+        <div class="card-body">
+            <div class="chart-area">
+
+                <canvas id="line-chart" width="200" height="200"></canvas> 
+            </div>
+        </div>
+        </div>
+    </div>
+</div>
+<div class="container" >
+    <div class="row col-md-12 col-md-offset-2 custyle">
+    <table class="table table-striped custab">
+    <thead>
+        <br>
+    <!-- <a href="#" class="btn btn-primary btn-xs pull-right"><b>+</b> Add new categories</a> -->
+        <tr class="m-0 font-weight-bold text-primary">
+            <th>Club name</th>
+            <th>Address</th>
+            <th>Opening time</th>
+            <th>Closing time</th>
+           
+            <th class="text-center">Action</th>
+        </tr>
+    </thead>
+            <tr *ngFor="let club of clubList" class="cc">
+                <td><strong>{{club.name}}</strong></td>
+                <td>{{club.add}}</td>
+                <td>{{club.open}}</td>
+                <td>{{club.close}}</td>
+                <td></td>
+               
+                <td class="text-center" (click)="onDelete(club.key)"><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> Del</a></td>
+                <td class="text-center" (click)="update(club,club.key)"><a class="btn btn-danger btn-xs"><span class="glyphicon glyphicon-remove"></span> update</a></td>
+            </tr>
+           
+    </table>
+    </div>
+</div>
